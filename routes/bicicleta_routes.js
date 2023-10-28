@@ -4,7 +4,8 @@ const { bicicleta } = require("../controller/bicicleta_controller.js");
 let router = express.Router();
 
 router.get("/bicicletas", bicicleta.read);
-router.post("/bicicletas/inserir", bicicleta.create);
-router.put("/bicicletas/alterar/:codigo_bicicleta", bicicleta.update);
+router.post("/bicicleta/inserir", bicicleta.create);
+router.put("/bicicleta/alterar/:codigo_bicicleta", bicicleta.update);
+router.delete("/bicicleta/deletar/:codigo_bicicleta", bicicleta.delete);
 
 module.exports = { router };
