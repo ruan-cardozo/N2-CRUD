@@ -11,4 +11,4 @@ server.listen(3000, function (){
     console.log("port 3000");
 })
 
-exports.server = server;
+module.exports = { server };
