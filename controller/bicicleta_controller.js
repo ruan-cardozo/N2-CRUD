@@ -48,11 +48,28 @@ bicicleta.update = async function (req, res) {
     res.send({
       status: "Edição feita com sucesso",
       result: result
-    })
+    });
     console.log("Edição feita com sucesso");
   } catch (e) {
     console.log("Ocorreu um erro ao editar/achar esse registro", e);
   }
 };
+
+bicicleta.delete = async function (req, res) {
+  const con = await connect();
+  try {
+    let bicicletaId = req.params.codigo_bicicleta;
+
+    let sql = "DELETE from bicicleta where codigo_bicicleta=?;";
+  let result = await con.query(sql, [bicicletaId]);
+    res.send({
+      status: "Registro excluido com sucesso",
+      result: result
+    });
+    console.log("Registro excluido com sucesso");
+  } catch (e) {
+    console.log("Ocorreu um erro ao excluir esse registro", e);
+  } 
+}
 
 module.exports = { bicicleta };
