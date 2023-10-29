@@ -7,5 +7,5 @@ router.get("/bicicletas", bicicleta.read);
 router.post("/bicicleta/inserir", bicicleta.create);
 router.put("/bicicleta/alterar/:codigo_bicicleta", bicicleta.update);
 router.delete("/bicicleta/deletar/:codigo_bicicleta", bicicleta.delete);
-
+router.get("/bicicletas/buscar-bicicletas/", bicicleta.search);
 module.exports = { router };
