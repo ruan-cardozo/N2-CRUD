@@ -49,6 +49,11 @@ bicicleta.update = async function (req, res) {
       bicicletaEditada.cor_bicicleta,
     ];
 
+    // let valeusobj = {
+    //   marca_bicicleta: bicicletaEditada.marca_bicicleta,
+    //   cor_bicicleta: bicicletaEditada.cor_bicicleta
+    // }
+
     let result = await con.query(sql, values);
     res.send({
       status: "Edição feita com sucesso",
@@ -81,7 +86,7 @@ bicicleta.search = async function (req, res) {
   const { cor, marca } = req.query;
   try {
     const con = await connect();
-    let sql = "SELECT * FROM  bicicleta WHERE 1 ";
+    let sql = "SELECT * FROM  bicicleta WHERE 1 "; // ->  é uma cláusula que sempre é verdadeira, qualquer registro satisfará essa condição, pois 1 é sempre igual a 1.
     if (cor) {
       sql += `AND cor_bicicleta LIKE '%${cor}%'`;
     }
