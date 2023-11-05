@@ -1,5 +1,5 @@
 const express = require("express");
-const { router } = require("./routes/bicicleta_routes.js");
+const { router } = require("./src/routes/bicicleta_routes.js");
 
 let server = express();
 
